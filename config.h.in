@@ -26,7 +26,7 @@
 #undef BSD
 
 /* Determines if the compilers supports always_inline attribute. */
-#undef C_ATTRIBUTE_ALWAYS_INLINE
+#cmakedefine C_ATTRIBUTE_ALWAYS_INLINE 1
 
 /* Determines if the compilers supports fastcall attribute. */
 #undef C_ATTRIBUTE_FASTCALL
