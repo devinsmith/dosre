@@ -29,7 +29,7 @@
 #cmakedefine C_ATTRIBUTE_ALWAYS_INLINE 1
 
 /* Determines if the compilers supports fastcall attribute. */
-#cmakedefine C_ATTRIBUTE_FASTCALL
+#cmakedefine C_ATTRIBUTE_FASTCALL 1
 
 /* Define to 1 to use inlined memory functions in cpu core */
 #cmakedefine C_CORE_INLINE 1
@@ -43,7 +43,7 @@
 
 /* Define to 1 to use recompiling cpu core. Can not be used together with the
    dynamic-x86 core */
-#undef C_DYNREC
+#cmakedefine C_DYNREC 1
 
 /* Define to 1 to enable floating point emulation */
 #undef C_FPU

@@ -26,6 +26,7 @@ option(C_CORE_INLINE "Enable inlined memory handling in CPU Core" OFF)
 option(C_DEBUG "Enable internal debugger, requires libcurses" OFF)
 cmake_dependent_option(C_HEAVY_DEBUG "Enable heavy debugging, also have to enable C_DEBUG" OFF "C_DEBUG" OFF)
 option(C_DIRECTSERIAL "Enable serial passthrough support" ON)
+option(C_DYNREC "Enable dynamic recompiling CPU Core" ON)
 
 configure_file(config.h.in config.h)
 
