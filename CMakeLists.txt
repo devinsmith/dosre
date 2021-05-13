@@ -1,7 +1,14 @@
 cmake_minimum_required(VERSION 3.8)
 project(dosre)
 
+# Prefer OpenGL old version
+if (POLICY CMP0072)
+   cmake_policy (SET CMP0072 OLD)
+endif(POLICY CMP0072)
+
 find_package(SDL REQUIRED)
+find_package(SDL_sound)
+find_package(OpenGL)
 
 include(CheckTypeSize)
 include(CheckCXXSourceCompiles)
@@ -40,6 +47,13 @@ check_cxx_source_compiles("int main() { int x = 10; if (__builtin_expect((x==1),
 
 check_cxx_symbol_exists(mprotect "sys/mman.h" C_HAVE_MPROTECT)
 
+if (OPENGL_FOUND)
+  set(C_OPENGL ON)
+endif()
+
+if (SDL_SOUND_FOUND)
+  set(C_SDL_SOUND ON)
+endif()
 
 configure_file(config.h.in config.h)
 
