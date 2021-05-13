@@ -87,10 +87,6 @@ void DISNEY_Init(Section*);
 void SERIAL_Init(Section*); 
 
 
-#if C_IPX
-void IPX_Init(Section*);
-#endif
-
 void SID_Init(Section* sec);
 
 void PIC_Init(Section*);
@@ -746,11 +742,6 @@ void DOSBOX_Init(void) {
 	secprop->AddInitFunction(&MSCDEX_Init);
 	secprop->AddInitFunction(&DRIVES_Init);
 	secprop->AddInitFunction(&CDROM_Image_Init);
-#if C_IPX
-	secprop=control->AddSection_prop("ipx",&IPX_Init,true);
-	Pbool = secprop->Add_bool("ipx",Property::Changeable::WhenIdle, false);
-	Pbool->Set_help("Enable ipx over UDP/IP emulation.");
-#endif
 //	secprop->AddInitFunction(&CREDITS_Init);
 
 	//TODO ?

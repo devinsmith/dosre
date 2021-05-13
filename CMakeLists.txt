@@ -5,6 +5,7 @@ find_package(SDL REQUIRED)
 
 include(CheckTypeSize)
 include(CheckCXXSourceCompiles)
+include(CheckCXXSymbolExists)
 include(CMakeDependentOption)
 
 check_type_size("int *" SIZEOF_INT_P)
@@ -27,6 +28,18 @@ option(C_DEBUG "Enable internal debugger, requires libcurses" OFF)
 cmake_dependent_option(C_HEAVY_DEBUG "Enable heavy debugging, also have to enable C_DEBUG" OFF "C_DEBUG" OFF)
 option(C_DIRECTSERIAL "Enable serial passthrough support" ON)
 option(C_DYNREC "Enable dynamic recompiling CPU Core" ON)
+option(C_FPU "Enable FPU emulation" ON)
+
+# attribute((packed))
+check_cxx_source_compiles("typedef struct { } __attribute__((packed)) junk;
+int main() { return 0; }" C_HAS_ATTRIBUTE)
+
+# __builtin_expect
+check_cxx_source_compiles("int main() { int x = 10; if (__builtin_expect((x==1), 0)); return 0; }"
+  C_HAS_BUILTIN_EXPECT)
+
+check_cxx_symbol_exists(mprotect "sys/mman.h" C_HAVE_MPROTECT)
+
 
 configure_file(config.h.in config.h)
 

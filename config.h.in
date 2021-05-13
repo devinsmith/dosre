@@ -46,26 +46,20 @@
 #cmakedefine C_DYNREC 1
 
 /* Define to 1 to enable floating point emulation */
-#undef C_FPU
+#cmakedefine C_FPU 1
 
 /* Determines if the compilers supports attributes for structures. */
-#undef C_HAS_ATTRIBUTE
+#cmakedefine C_HAS_ATTRIBUTE 1
 
 /* Determines if the compilers supports __builtin_expect for branch
    prediction. */
-#undef C_HAS_BUILTIN_EXPECT
+#cmakedefine C_HAS_BUILTIN_EXPECT 1
 
 /* Define to 1 if you have the mprotect function */
-#undef C_HAVE_MPROTECT
+#cmakedefine C_HAVE_MPROTECT 1
 
 /* Define to 1 to enable heavy debugging, also have to enable C_DEBUG */
 #cmakedefine C_HEAVY_DEBUG 1
-
-/* Define to 1 to enable IPX over Internet networking, requires SDL_net */
-#undef C_IPX
-
-/* Define to 1 to enable internal modem support, requires SDL_net */
-#undef C_MODEM
 
 /* Define to 1 to use opengl display output support */
 #undef C_OPENGL

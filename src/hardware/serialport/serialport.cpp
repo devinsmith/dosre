@@ -1241,22 +1241,6 @@ public:
 				}
 			}
 #endif
-#if C_MODEM
-			else if(type=="modem") {
-				serialports[i] = new CSerialModem (i, &cmd);
-				if (!serialports[i]->InstallationSuccessful)  {
-					delete serialports[i];
-					serialports[i] = NULL;
-				}
-			}
-			else if(type=="nullmodem") {
-				serialports[i] = new CNullModem (i, &cmd);
-				if (!serialports[i]->InstallationSuccessful)  {
-					delete serialports[i];
-					serialports[i] = NULL;
-				}
-			}
-#endif
 			else if(type=="disabled") {
 				serialports[i] = NULL;
 			} else {
