@@ -154,6 +154,8 @@ check_include_file_cxx(sys/socket.h HAVE_SYS_SOCKET_H)
 check_include_file_cxx(sys/stat.h HAVE_SYS_STAT_H)
 check_include_file_cxx(sys/types.h HAVE_SYS_TYPES_H)
 check_include_file_cxx(unistd.h HAVE_UNISTD_H)
+check_include_file_cxx(sndio.h HAVE_SNDIO_H)
+cmake_dependent_option(USE_SNDIO "Enable sndio" OFF "HAVE_SNDIO_H" OFF)
 
 # There is no good way to detect the platform that this project runs on
 # and platform/OS specific checks are not really even a good idea anyway.

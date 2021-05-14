@@ -30,6 +30,9 @@ if (OPENGL_FOUND)
   list(APPEND LINK_LIBRARIES ${OPENGL_gl_LIBRARY})
 endif()
 
+if (USE_SNDIO)
+  list(APPEND LINK_LIBRARIES sndio)
+endif()
 
 add_executable(${TARGET_NAME} ${SOURCES} ${HEADERS})
 target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include ${CMAKE_BINARY_DIR}

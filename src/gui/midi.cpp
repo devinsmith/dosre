@@ -86,6 +86,10 @@ MidiHandler Midi_none;
 
 #include "midi_win32.h"
 
+#elif defined (USE_SNDIO)
+
+#include "midi_sndio.h"
+
 #else
 
 #include "midi_oss.h"
