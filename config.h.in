@@ -20,10 +20,10 @@
 
 
 /* Define if building universal (internal helper macro) */
-#undef AC_APPLE_UNIVERSAL_BUILD
+#cmakedefine AC_APPLE_UNIVERSAL_BUILD 1
 
 /* Compiling on BSD */
-#undef BSD
+#cmakedefine BSD 1
 
 /* Determines if the compilers supports always_inline attribute. */
 #cmakedefine C_ATTRIBUTE_ALWAYS_INLINE 1
@@ -68,109 +68,103 @@
 #cmakedefine C_SDL_SOUND 1
 
 /* Define to 1 if you have setpriority support */
-#undef C_SET_PRIORITY
+#cmakedefine C_SET_PRIORITY 1
 
 /* Define to 1 to enable screenshots, requires libpng */
-#undef C_SSHOT
+#cmakedefine C_SSHOT 1
 
 /* The type of cpu this target has */
-#undef C_TARGETCPU
+#define C_TARGETCPU @UPPERCASE_SYSTEM_PROCESSOR@
 
 /* Define to 1 to use a unaligned memory access */
-#undef C_UNALIGNED_MEMORY
+#cmakedefine C_UNALIGNED_MEMORY 1
 
 /* define to 1 if you have XKBlib.h and X11 lib */
-#undef C_X11_XKB
+#cmakedefine C_X11_XKB 1
 
 /* libm doesn't include powf */
-#undef DB_HAVE_NO_POWF
+#cmakedefine DB_HAVE_NO_POWF 1
 
 /* struct dirent has d_type */
-#undef DIRENT_HAS_D_TYPE
+#cmakedefine DIRENT_HAS_D_TYPE 1
 
 /* environ can be included */
-#undef ENVIRON_INCLUDED
+#cmakedefine ENVIRON_INCLUDED 1
 
 /* environ can be linked */
-#undef ENVIRON_LINKED
+#cmakedefine ENVIRON_LINKED 1
 
 /* Define to 1 to use ALSA for MIDI */
-#undef HAVE_ALSA
+#cmakedefine HAVE_ALSA 1
 
 /* Define to 1 if you have the <ddraw.h> header file. */
-#undef HAVE_DDRAW_H
+#cmakedefine HAVE_DDRAW_H 1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
-#undef HAVE_INTTYPES_H
-
-/* Define to 1 if you have the `asound' library (-lasound). */
-#undef HAVE_LIBASOUND
+#cmakedefine HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the <memory.h> header file. */
-#undef HAVE_MEMORY_H
+#cmakedefine HAVE_MEMORY_H 1
 
 /* Define to 1 if you have the <netinet/in.h> header file. */
-#undef HAVE_NETINET_IN_H
+#cmakedefine HAVE_NETINET_IN_H 1
 
 /* Define to 1 if you have the <pwd.h> header file. */
-#undef HAVE_PWD_H
+#cmakedefine HAVE_PWD_H 1
 
 /* Define to 1 if you have the `realpath' function. */
-#undef HAVE_REALPATH
+#cmakedefine HAVE_REALPATH 1
 
 /* Define to 1 if you have the <stdint.h> header file. */
-#undef HAVE_STDINT_H
+#cmakedefine HAVE_STDINT_H 1
 
 /* Define to 1 if you have the <stdlib.h> header file. */
-#undef HAVE_STDLIB_H
+#cmakedefine HAVE_STDLIB_H 1
 
 /* Define to 1 if you have the <strings.h> header file. */
-#undef HAVE_STRINGS_H
+#cmakedefine HAVE_STRINGS_H 1
 
 /* Define to 1 if you have the <string.h> header file. */
-#undef HAVE_STRING_H
+#cmakedefine HAVE_STRING_H 1
 
 /* Define to 1 if you have the <sys/socket.h> header file. */
-#undef HAVE_SYS_SOCKET_H
+#cmakedefine HAVE_SYS_SOCKET_H 1
 
 /* Define to 1 if you have the <sys/stat.h> header file. */
-#undef HAVE_SYS_STAT_H
+#cmakedefine HAVE_SYS_STAT_H 1
 
 /* Define to 1 if you have the <sys/types.h> header file. */
-#undef HAVE_SYS_TYPES_H
+#cmakedefine HAVE_SYS_TYPES_H 1
 
 /* Define to 1 if you have the <unistd.h> header file. */
-#undef HAVE_UNISTD_H
+#cmakedefine HAVE_UNISTD_H 1
 
 /* Compiling on GNU/Linux */
-#undef LINUX
+#cmakedefine LINUX 1
 
 /* Compiling on Mac OS X */
-#undef MACOSX
-
-/* Compiling on OS/2 EMX */
-#undef OS2
+#cmakedefine MACOSX 1
 
 /* Name of package */
-#undef PACKAGE
+#define PACKAGE "@PACKAGE@"
 
 /* Define to the address where bug reports for this package should be sent. */
-#undef PACKAGE_BUGREPORT
+#define PACKAGE_BUGREPORT ""
 
 /* Define to the full name of this package. */
-#undef PACKAGE_NAME
+#define PACKAGE_NAME "@PACKAGE@"
 
 /* Define to the full name and version of this package. */
-#undef PACKAGE_STRING
+#define PACKAGE_STRING "@PACKAGE@ @VERSION@"
 
 /* Define to the one symbol short name of this package. */
-#undef PACKAGE_TARNAME
+#define PACKAGE_TARNAME "@PACKAGE@"
 
 /* Define to the home page for this package. */
-#undef PACKAGE_URL
+#define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#undef PACKAGE_VERSION
+#define PACKAGE_VERSION "@VERSION@"
 
 /* The size of `int *', as computed by sizeof. */
 #define SIZEOF_INT_P @SIZEOF_INT_P@
@@ -191,13 +185,10 @@
 #define SIZEOF_UNSIGNED_SHORT @SIZEOF_UNSIGNED_SHORT@
 
 /* Define to 1 if you have the ANSI C header files. */
-#undef STDC_HEADERS
-
-/* Define to 1 if your <sys/time.h> declares `struct tm'. */
-#undef TM_IN_SYS_TIME
+#define STDC_HEADERS 1
 
 /* Version number of package */
-#undef VERSION
+#define VERSION "@VERSION@"
 
 /* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
    significant byte first (like Motorola and SPARC, unlike Intel). */
