@@ -7,8 +7,9 @@ set(VERSION 0.01)
 # Prefer OpenGL old version
 set (OpenGL_GL_PREFERENCE LEGACY)
 
+# TODO: Need to get rid of this!
 if (POLICY CMP0075)
-  cmake_policy(SET CMP0075 OLD)
+  cmake_policy(SET CMP0075 NEW)
 endif()
 
 find_package(SDL REQUIRED)

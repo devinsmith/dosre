@@ -18,6 +18,17 @@ add_subdirectory(shell)
 set(SOURCES dosbox.cpp)
 
 set(LINK_LIBRARIES ${SDL_LIBRARY})
+if (ALSA_FOUND)
+  list(APPEND LINK_LIBRARIES ${ALSA_LIBRARY})
+endif()
+
+if (X11_FOUND)
+  list(APPEND LINK_LIBRARIES ${X11_LIBRARIES})
+endif()
+
+if (OPENGL_FOUND)
+  list(APPEND LINK_LIBRARIES ${OPENGL_gl_LIBRARY})
+endif()
 
 
 add_executable(${TARGET_NAME} ${SOURCES} ${HEADERS})
