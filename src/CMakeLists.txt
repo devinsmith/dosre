@@ -9,7 +9,6 @@ add_subdirectory(dos)
 add_subdirectory(fpu)
 add_subdirectory(gui)
 add_subdirectory(hardware)
-add_subdirectory(libs)
 add_subdirectory(ints)
 add_subdirectory(misc)
 add_subdirectory(shell)
@@ -37,7 +36,7 @@ endif()
 add_executable(${TARGET_NAME} ${SOURCES} ${HEADERS})
 target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include ${CMAKE_BINARY_DIR}
   ${SDL_INCLUDE_DIR})
-target_link_libraries(${TARGET_NAME} PRIVATE cpu debuglib dos fpu gui hardware mame serialport gui_tk ints
+target_link_libraries(${TARGET_NAME} PRIVATE cpu debuglib dos fpu gui hardware mame serialport ints
   misc shell ${LINK_LIBRARIES})
 
 #if(MSVC)
