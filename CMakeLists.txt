@@ -18,6 +18,7 @@ find_package(OpenGL)
 find_package(PNG)
 find_package(X11)
 find_package(ALSA)
+find_package(Curses)
 
 include(CheckTypeSize)
 include(CheckIncludeFileCXX)
@@ -166,6 +167,9 @@ cmake_dependent_option(USE_SNDIO "Enable sndio" OFF "HAVE_SNDIO_H" OFF)
 set(LINUX ON)
 #set(BSD ON)
 #set(MACOSX ON)
+
+set(C_DEBUG ON)
+set(C_HEAVY_DEBUG ON)
 
 configure_file(config.h.in config.h)
 

@@ -33,6 +33,8 @@ if (USE_SNDIO)
   list(APPEND LINK_LIBRARIES sndio)
 endif()
 
+list(APPEND LINK_LIBRARIES ${CURSES_LIBRARIES})
+
 add_executable(${TARGET_NAME} ${SOURCES} ${HEADERS})
 target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include ${CMAKE_BINARY_DIR}
   ${SDL_INCLUDE_DIR})

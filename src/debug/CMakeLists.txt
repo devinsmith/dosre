@@ -5,5 +5,5 @@ set(SOURCES debug.cpp debug_gui.cpp debug_disasm.cpp
   debug_win32.cpp)
 
 add_library(debuglib STATIC ${SOURCES})
-target_include_directories(debuglib PRIVATE ${CMAKE_SOURCE_DIR}/include ${CMAKE_BINARY_DIR})
-
+target_include_directories(debuglib PRIVATE ${CMAKE_SOURCE_DIR}/include ${CMAKE_BINARY_DIR}
+  ${SDL_INCLUDE_DIR})
