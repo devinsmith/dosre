@@ -355,6 +355,7 @@ static Bitu DOS_21Handler(void) {
 		dos.dta(RealMakeSeg(ds,reg_dx));
 		break;
 	case 0x25:		/* Set Interrupt Vector */
+		LOG(LOG_FCB,LOG_NORMAL)("DOS:25:Set Interrupt Vector: 0x%02X -> 0x%04X", reg_al, reg_dx);
 		RealSetVec(reg_al,RealMakeSeg(ds,reg_dx));
 		break;
 	case 0x26:		/* Create new PSP */
